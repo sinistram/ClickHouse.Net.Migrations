@@ -1,8 +1,5 @@
-[![Build Status](https://travis-ci.org/ilyabreev/ClickHouse.Net.Migrations.svg?branch=master)](https://travis-ci.org/ilyabreev/ClickHouse.Net.Migrations)
-[![NuGet version](https://badge.fury.io/nu/ClickHouse.Net.Migrations.svg)](https://badge.fury.io/nu/ClickHouse.Net.Migrations)
-
 # ClickHouse.Net.Migrations
-Basic migrations functionality for ClickHouse.Net
+Basic migrations functionality for ClickHouse.Ado
 
 ## Install
 
@@ -27,7 +24,7 @@ services.AddClickHouseMigrations();
 and define how to resolve `ClickHouseConnectionSettings`:
 
 ```c#
-services.AddTransient(p => new ClickHouseConnectionSettings(connectionString));
+services.AddTransient(p => new ClickHouseMigrationSettings(..));
 ```
 
 Then add `IClickHouseMigrations` as dependency in any of your classes.
