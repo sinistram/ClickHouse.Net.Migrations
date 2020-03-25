@@ -1,18 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <AssemblyTitle>KL.ClickHouse.Net.Migrations</AssemblyTitle>
+    <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.6</Version>
-    <Authors>ilyabreev</Authors>
-    <Company>Sintek</Company>
-    <PackageProjectUrl>https://github.com/ilyabreev/ClickHouse.Net.Migrations</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ilyabreev/ClickHouse.Net.Migrations</RepositoryUrl>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <LangVersion>latest</LangVersion>
+
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>Kaspersky</Company>
+    <Authors></Authors>
     <PackageTags>clickhouse net migrations</PackageTags>
     <Description>Basic migrations functionality for ClickHouse.Net</Description>
+    <AssemblyName>ClickHouse.Net.Migrations</AssemblyName>
+    <RootNamespace>ClickHouse.Net.Migrations</RootNamespace>
+    <Copyright>Copyright © Kaspersky 2019</Copyright>
+
+
+    <!-- ReSharper disable UnknownProperty -->
+    <AssemblyVersion Condition="'$(VersionAssembly)' == ''">1.0.0.0</AssemblyVersion>
+    <AssemblyVersion Condition="'$(VersionAssembly)' != ''">$(VersionAssembly)</AssemblyVersion>
+    <InformationalVersion Condition="'$(VersionAssembly)' == ''">1.0.0.0</InformationalVersion>
+    <InformationalVersion Condition="'$(VersionAssembly)' != ''">$(VersionAssembly)</InformationalVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <!-- ReSharper restore UnknownProperty -->
+
+    <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClickHouse.Net" Version="0.4.1" />
+    <PackageReference Include="ClickHouse.Ado" Version="1.1.20" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
